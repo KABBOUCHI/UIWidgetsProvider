@@ -67,22 +67,22 @@ namespace KABBOUCHI.UIWidgets.Provider.Examples
             public override Widget build(BuildContext context)
             {
                 return new MaterialApp(
-            home: new Column(
-            children: new List<Widget>{
-                    new RaisedButton(
-                        child : new Text("Inc"),
-                        onPressed: () => {
-                            Example02Panel.Instance.model.Number++;
+                    home: new Column(
+                    children: new List<Widget>{
+                            new RaisedButton(
+                                child : new Text("Inc"),
+                                onPressed: () => {
+                                    Example02Panel.Instance.model.Number++;
+                                }
+                            ),
+                            new ChangeNotifierProvider<ModelTest>(
+                                notifier :Example02Panel.Instance.model,
+                                builder :(ctx,notifier) => new Consumer<ModelTest>(
+                                    builder  : (c,m) => new Text(m.Number.ToString())
+                                )
+                            )
                         }
-                    ),
-                    new ChangeNotifierProvider<ModelTest>(
-                        notifier :Example02Panel.Instance.model,
-                        builder :(ctx,notifier) => new Consumer<ModelTest>(
-                            builder  : (c,m) => new Text(m.Number.ToString())
-                        )
                     )
-                }
-        )
                 );
             }
         }
