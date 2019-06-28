@@ -59,7 +59,6 @@ namespace KABBOUCHI.UIWidgets.Provider.Examples
         {
             Instance = this;
             // return new ProviderTest();
-            // return new StatefullProviderTest();
             return new ChangeNotifierProviderTest();
 
         }
@@ -78,49 +77,6 @@ namespace KABBOUCHI.UIWidgets.Provider.Examples
              );
             }
         }
-
-        class StatefullProviderTest : StatefulWidget
-        {
-
-            public override State createState()
-            {
-                return new StatefullProviderTestState();
-            }
-        }
-
-
-        class StatefullProviderTestState : State<StatefullProviderTest>
-        {
-            ModelTest model = new ModelTest();
-            int n = 1;
-
-            public override void initState()
-            {
-                base.initState();
-
-            }
-            public override Widget build(BuildContext context)
-            {
-                return new MaterialApp(
-                 home: new Provider<int>(
-                        value: n,
-                        child: new Column(
-                    children: new List<Widget>{
-                    new RaisedButton(
-                        child : new Text("Inc"),
-                        onPressed: () => {
-                            n++;
-                            setState();
-                        }
-                    ),new Consumer<int>(
-                        builder: (ctx, value) => new Text(n.ToString())
-                    )
-                    }
-                    )));
-            }
-        }
-
-
         class ChangeNotifierProviderTest : StatelessWidget
         {
 
