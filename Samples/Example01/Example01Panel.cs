@@ -49,7 +49,7 @@ namespace KABBOUCHI.UIWidgets.Provider.Examples
 
         public void Inc()
         {
-            using (Example01Panel.Instance.window.getScope())
+            using (window.getScope())
             {
                 model.Number++;
             }
