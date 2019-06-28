@@ -1,0 +1,15 @@
+{
+    "name": "KABBOUCHI.UIWidgetsProvider",
+    "references": [
+        "Unity.InternalAPIEngineBridge.024",
+        "Unity.UIWidgets"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
